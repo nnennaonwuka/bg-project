@@ -1,0 +1,9 @@
+{
+    "dev":{
+        "driver":"pg",
+        "user":"postgres",
+        "password":"neni1509",
+        "host":"localhost",
+        "database":"bg_project"
+    }
+}
