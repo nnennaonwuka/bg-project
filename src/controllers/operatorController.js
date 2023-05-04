@@ -193,14 +193,14 @@ const uploadImage = async (req, res) => {
 
 const loginOperator = async (req, res) => {
   try {
-    const { operator_id } = req.params;
+    const { id } = req.params;
     const { email, password } = req.body;
     if (!(email && password)) {
       res.status(400).send("All fields are mandatory");
     }
 
     //checks if operator is verified
-    verifyOperator(operator_id);
+    const verifiedOperator = await verifyOperator(id);
 
     //logs in operator
     const conn = await pool.connect();
