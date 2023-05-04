@@ -157,7 +157,7 @@ const verifyOperator = async (id, res) => {
     const result = await conn.query(sql, values);
     const rows = result.rows;
     conn.release();
-    if (result.rowCount === 0) {
+    if (!rows) {
       throw new Error("You are not a verified operator");
     }
     return rows;
